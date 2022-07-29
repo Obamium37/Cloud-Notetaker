@@ -105,6 +105,7 @@ function App() {
           <button style={buttonStyle} onClick={() => {updateNote(username.id, username.notes)}}>Submit</button>        
           <button style={deleteStyle} onClick={() => {deleteNote(username.id)}}>Delete Note</button>
           
+          
         </div>  
         ) 
       })}
@@ -114,4 +115,5 @@ function App() {
 }
 
 export default App;
+
 
