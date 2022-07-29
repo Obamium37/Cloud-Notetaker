@@ -6,6 +6,7 @@ import { db } from './firebase-config';
 import {collection, getDocs, addDoc, deleteDoc, doc, updateDoc} from "firebase/firestore"; 
 
 
+
 function App() {
 
 
@@ -40,7 +41,7 @@ function App() {
 
   const updateNote = async (id, notes) => {
     const userDoc = doc(db, "username", id);
-    const newFields = { notes: notes + ' ' + input };
+    const newFields = { notes: notes + ' ' + input};
     setInput("")
     await updateDoc(userDoc, newFields);
   };
@@ -99,7 +100,7 @@ function App() {
         <div>
           {" "}
           <h1 className='primary'>Name: {username.name} </h1>
-          <p style={noteStyle} >Notes: {username.notes} </p>
+          <p style={noteStyle}> Notes: {username.notes} </p>
 
           <textarea style={noteStyle} type="textarea" value={input} placeholder='Enter Edit' onChange={(event) => {setInput(event.target.value)}}/>
           <button style={buttonStyle} onClick={() => {updateNote(username.id, username.notes)}}>Submit</button>        
@@ -110,10 +111,11 @@ function App() {
         ) 
       })}
     </div>
-  );
+  );  
 
 }
 
 export default App;
+
 
 
